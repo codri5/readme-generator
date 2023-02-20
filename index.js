@@ -1,7 +1,5 @@
-const fs = require('fs').promises;
-const path = require('path');
+const fs = require('fs');
 const inquirer = require('inquirer');
-const util = require('util');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // array of questions for user
@@ -41,7 +39,7 @@ const questions = [
     },
 
     { type: 'input',
-      name: 'test',
+      name: 'tests',
       message: 'Please enter testing instructions: ',
     },
 
@@ -61,16 +59,14 @@ function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (error) => error ? console.log(error) : console.log('Your README.md file has been created.'));
 }
 
-const writeAsync = util.promisify(writeToFile);
-
 // function to initialize program
-function init() {
-  const userInput = inquirer.prompt(questions);
-  /*
-  const mdFile = generateMarkdown(userInput);
-  console.log(mdFile);
-  writeAsync('README.md', mdFile);
-*/
+async function init() {
+  try {
+    const userInput = await inquirer.prompt(questions);
+    const markdownFile = generateMarkdown(userInput);
+    writeToFile('_README.md', markdownFile)
+  }
+  catch (error) { console.log(error); }
 }
 
 // function call to initialize program
