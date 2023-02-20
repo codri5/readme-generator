@@ -65,7 +65,12 @@ const writeAsync = util.promisify(writeToFile);
 
 // function to initialize program
 function init() {
-    const userInput = inquirer.prompt(questions);
+  const userInput = inquirer.prompt(questions);
+  /*
+  const mdFile = generateMarkdown(userInput);
+  console.log(mdFile);
+  writeAsync('README.md', mdFile);
+*/
 }
 
 // function call to initialize program
