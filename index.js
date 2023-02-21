@@ -50,7 +50,7 @@ const questions = [
   { type: 'input',
     name: 'tests',
     message: 'Please enter testing instructions: ',
-  }
+  },
 ];
 
 // function to write README file
@@ -63,7 +63,7 @@ async function init() {
   try {
     const userInput = await inquirer.prompt(questions);
     const markdownFile = generateMarkdown(userInput);
-    writeToFile('_README.md', markdownFile)
+    writeToFile('SampleREADME.md', markdownFile)
   }
   catch (error) { console.log(error); }
 }

@@ -10,10 +10,20 @@ function generateLicenseBadge(data) {
 
 // function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title} ${generateLicenseBadge(data)}
+  return `# ${data.title}
+
+${generateLicenseBadge(data)}
 
 ## Description
 ${data.description}
+
+## Table of Contents
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [License](#license)
+4. [Contributing](#contributing)
+5. [Tests](#tests)
+4. [Questions](#questions)
 
 ## Installation
 ${data.installation}
@@ -22,7 +32,7 @@ ${data.installation}
 ${data.usage}
 
 ## License
-${data.license}
+The application is lincesed under the ${data.license} License.
 
 ## Contributing
 ${data.contribute}
