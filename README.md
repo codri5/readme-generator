@@ -26,7 +26,7 @@ Enter the information required and a new file named `SampleREADME.md` will be ge
 
 ## Demonstration
 
-Click [here](https://www.videoplaceholder.com/) for a demo of the application.
+Click [here](https://youtu.be/7JKAoyIgQEk) for a demo of the application.
 
 ## License
 
