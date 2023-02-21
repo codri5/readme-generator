@@ -1,5 +1,7 @@
+// npm packages
 const fs = require('fs');
 const inquirer = require('inquirer');
+// import function
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // array of questions for user
@@ -50,7 +52,7 @@ const questions = [
   { type: 'input',
     name: 'tests',
     message: 'Please enter testing instructions: ',
-  },
+  }
 ];
 
 // function to write README file
