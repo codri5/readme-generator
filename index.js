@@ -37,10 +37,9 @@ const questions = [
   { type: 'list',
     name: 'license',
     message: 'Please select the license used: ',
-    choices: ['Apache License 2.0', 'GNU GPL v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License',
-              'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal',
-              'Eclipse Public License 2.0', 'GNU AGPL v3.0', 'GNU GPL v2.0', 'GNU LGPL v2.1', 'Mozilla Public License 2.0',
-              'The Unlicense']
+    choices: ['Apache 2.0', 'GNU GPL v3.0', 'MIT', 'BSD 2 Clause', 'BSD 3 Clause', 
+              'Boost 1.0', 'CC0 v1.0 Universal', 'Eclipse 1.0', 'GNU AGPL v3.0', 
+              'GNU GPL v2.0', 'GNU LGPL v3.0', 'Mozilla 2.0', 'Unlicense']
   },
 
   { type: 'input',
@@ -54,12 +53,6 @@ const questions = [
   }
 ];
 
-// function to generate license badge
-function generateLicenseBadge(data) {
-  let chosenLicense = data.license;
-  console.log(chosenLicense)
-}
-
 // function to write README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (error) => error ? console.log(error) : console.log('Your README.md file has been created.'));
@@ -70,7 +63,6 @@ async function init() {
   try {
     const userInput = await inquirer.prompt(questions);
     const markdownFile = generateMarkdown(userInput);
-    generateLicenseBadge(userInput)
     writeToFile('_README.md', markdownFile)
   }
   catch (error) { console.log(error); }
