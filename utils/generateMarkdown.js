@@ -37,7 +37,7 @@ ${data.usage}
 
 ## License
 
-The application is lincesed under the ${data.license} License.
+The application is licensed under the ${data.license} License.
 
 ## Contributing
 

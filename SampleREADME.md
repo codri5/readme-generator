@@ -24,7 +24,7 @@ Morbi volutpat quam viverra, consequat diam a, lobortis tortor. Cras maximus dui
 
 ## License
 
-The application is lincesed under the Apache 2.0 License.
+The application is licensed under the Apache 2.0 License.
 
 ## Contributing
 
@@ -37,5 +37,5 @@ Nulla lobortis hendrerit nisi, sit amet porta nibh sodales non. Aliquam gravida 
 ## Questions
 
 For any questions about this project, please contact me: 
-* GitHub: https://github.com/example
-* Email: example@gmail.com
+* GitHub: https://github.com/codri5
+* Email: codrinapal@gmail.com
