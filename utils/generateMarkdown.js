@@ -21,8 +21,8 @@ ${data.contribute}
 ${data.tests}
 
 ## Questions
-${data.username}
-${data.email}
+https://github.com/${data.username}
+For any additional questions, contact me at: ${data.email}.
 `;
 }
 
