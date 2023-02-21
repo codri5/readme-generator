@@ -1,5 +1,5 @@
 // function to generate license badge
-function generateLicenseBadge(data) {
+const generateLicenseBadge = (data) => {
   let license = data.license;
   let licenseBadge = '';
   if (license) {
@@ -10,7 +10,7 @@ function generateLicenseBadge(data) {
 }
 
 // function to generate markdown for README
-function generateMarkdown(data) {
+const generateMarkdown = (data) => {
   return `# ${data.title}
 
 ${generateLicenseBadge(data)}

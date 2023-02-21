@@ -9,31 +9,37 @@ const questions = [
   { type: 'input',
     name: 'username',
     message: 'What is your GitHub username? ',
+    validate: input => input ? true : console.log('Please enter your username!')
   },
 
   { type: 'input',
     name: 'email',
     message: 'What is your email address? ',
+    validate: input => input ? true : console.log('Please enter your email address!')
   },
 
   { type: 'input',
     name: 'title',
-    message: 'What is the title of your project?'
+    message: 'What is the title of your project?',
+    validate: input => input ? true : console.log('Please enter your project title.')
   },
 
   { type: 'input',
     name: 'description',
-    message: 'Please enter a description: '
+    message: 'Please enter a description: ',
+    validate: input => input ? true : console.log('Please enter a description for your project.')
   },
 
   { type: 'input',
     name: 'installation',
-    message: 'Please enter installation instructions: '
+    message: 'Please enter installation instructions: ',
+    validate: input => input ? true : console.log('Please enter installation directions.')
   },
 
   { type: 'input',
     name: 'usage',
-    message: 'Please enter usage information: '
+    message: 'Please enter usage information: ',
+    validate: input => input ? true : console.log('Please enter usage information.')
   },
 
   { type: 'list',
@@ -47,21 +53,23 @@ const questions = [
   { type: 'input',
     name: 'contribute',
     message: 'Please enter contribution guidelines: ',
+    validate: input => input ? true : console.log('Please enter contribution guidelines.')
   },
 
   { type: 'input',
     name: 'tests',
     message: 'Please enter testing instructions: ',
+    validate: input => input ? true : console.log('Please enter testing instructions.')
   }
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, (error) => error ? console.log(error) : console.log('Your README.md file has been created.'));
-}
+const writeToFile = (fileName, data) => (
+  fs.writeFile(fileName, data, (error) => error ? console.log(error) : console.log('Your README.md file has been created.'))
+);
 
 // function to initialize program
-async function init() {
+const init = async () => {
   try {
     const userInput = await inquirer.prompt(questions);
     const markdownFile = generateMarkdown(userInput);
